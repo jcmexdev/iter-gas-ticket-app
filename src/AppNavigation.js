@@ -9,7 +9,7 @@ const AppNavigation = () => (
   <Router>
     <Stack key="root">
       <Scene key="signIn" component={SignIn} title="Login" initial />
-      <Scene key="home" component={Home} />
+      <Scene key="home" component={Home} hideNavBar />
     </Stack>
   </Router>
 );

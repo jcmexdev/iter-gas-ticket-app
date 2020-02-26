@@ -11,9 +11,13 @@
     "lint": "eslint src/ --fix"
   },
   "dependencies": {
+    "@react-native-community/datetimepicker": "^2.2.2",
+    "moment": "^2.24.0",
+    "native-base": "^2.13.8",
     "react": "16.9.0",
     "react-native": "0.61.5",
     "react-native-gesture-handler": "^1.6.0",
+    "react-native-print": "^0.6.0",
     "react-native-reanimated": "^1.7.0",
     "react-native-router-flux": "4.2.0",
     "react-native-screens": "^2.0.0",

@@ -1,6 +1,17 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Router, Scene, Stack } from 'react-native-router-flux';
 
-const AppNavigation = () => <Text style={{ fontSize: 30 }}>App Navigation</Text>;
+/*= ================SCENES================= */
+import Home from './screens/home';
+import SignIn from './screens/signin';
+
+const AppNavigation = () => (
+  <Router>
+    <Stack key="root">
+      <Scene key="signIn" component={SignIn} title="Login" initial />
+      <Scene key="home" component={Home} />
+    </Stack>
+  </Router>
+);
 
 export default AppNavigation;

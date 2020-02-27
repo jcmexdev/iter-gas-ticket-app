@@ -9,6 +9,7 @@ module.exports = {
     'react/jsx-filename-extension': 'off',
     'react/prop-types': 'off',
     'comma-dangle': 'off',
+    'react/destructuring-assignment': 'off',
   },
   globals: {
     fetch: false,

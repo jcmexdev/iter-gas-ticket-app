@@ -11,6 +11,7 @@
     "lint": "eslint src/ --fix"
   },
   "dependencies": {
+    "@react-native-community/async-storage": "^1.8.0",
     "react": "16.9.0",
     "react-native": "0.61.5",
     "react-native-gesture-handler": "^1.6.0",
@@ -19,6 +20,7 @@
     "react-native-screens": "^2.0.0",
     "react-redux": "7.2.0",
     "redux": "4.0.5",
+    "redux-persist": "^6.0.0",
     "redux-thunk": "2.3.0"
   },
   "devDependencies": {

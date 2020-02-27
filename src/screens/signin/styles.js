@@ -48,4 +48,9 @@ export default {
     fontSize: 18,
     fontWeight: 'bold',
   },
+  error: {
+    color: 'red',
+    alignSelf: 'center',
+    textTransform: 'uppercase',
+  },
 };

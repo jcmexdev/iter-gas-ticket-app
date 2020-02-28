@@ -1,6 +1,5 @@
 import React from 'react';
 import { Router, Scene, Stack } from 'react-native-router-flux';
-
 /*= ================SCENES================= */
 import Home from './screens/home';
 import SignIn from './screens/signin';

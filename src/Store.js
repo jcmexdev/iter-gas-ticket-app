@@ -11,7 +11,6 @@ const reducer = combineReducers({
 const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
-  timeout: null,
 };
 
 // const logger = store => next => action => {

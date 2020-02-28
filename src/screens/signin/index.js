@@ -12,9 +12,8 @@ import {
   Alert,
 } from 'react-native';
 import { Actions, ActionConst } from 'react-native-router-flux';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as actions from '../../actions';
+import { SET_USER } from '../../actions';
 import iterGasLogo from '../../images/iter-gas-natural.png';
 import styles from './styles';
 
@@ -32,8 +31,10 @@ class SignIn extends Component {
   }
 
   componentDidMount() {
-    if (this.props.user) {
-      Actions.home({ type: ActionConst.RESET });
+    if (this.props.user != null) {
+      setTimeout(() => {
+        Actions.home({ type: ActionConst.RESET });
+      }, 0);
     }
   }
 
@@ -53,10 +54,6 @@ class SignIn extends Component {
 
     fetch('http://189.194.249.170:83/atsem/url/ticket/login.php', {
       method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
       body: data,
     })
       .then((response) => response.json())
@@ -85,7 +82,7 @@ class SignIn extends Component {
         });
       } else {
         // El usuario fue encontrado
-        this.props.actions.SET_USER(user.fullName);
+        this.props.dispatch(SET_USER(user.fullName));
         Actions.home({ type: ActionConst.RESET });
       }
     }
@@ -151,10 +148,7 @@ class SignIn extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  actions: bindActionCreators(actions, dispatch),
-});
 const mapStateToProps = (state) => ({
   user: state.user,
 });
-export default connect(mapStateToProps, mapDispatchToProps)(SignIn);
+export default connect(mapStateToProps)(SignIn);

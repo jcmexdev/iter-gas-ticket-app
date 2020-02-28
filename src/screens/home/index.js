@@ -125,10 +125,10 @@ export default class Home extends Component {
   customOptions = () => (
     <View style={styles.container}>
       {this.state.selectedPrinter && (
-      <View style={styles.container}>
-        <Text>{`Impresora seleccionada: ${this.state.selectedPrinter.name}`}</Text>
-        <Text>{`Direccion: ${this.state.selectedPrinter.url}`}</Text>
-      </View>
+        <View style={styles.container}>
+          <Text>{`Impresora seleccionada: ${this.state.selectedPrinter.name}`}</Text>
+          <Text>{`Direccion: ${this.state.selectedPrinter.url}`}</Text>
+        </View>
       )}
       <TouchableOpacity style={styles.button} onPress={this.selectPrinter}>
         <Text>SELECCIONA UNA IMPRESORA</Text>

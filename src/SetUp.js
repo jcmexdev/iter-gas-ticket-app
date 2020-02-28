@@ -1,11 +1,18 @@
 import React from 'react';
 import { Provider } from 'react-redux';
+import { ActivityIndicator } from 'react-native';
+import { PersistGate } from 'redux-persist/integration/react';
 import AppNavigation from './AppNavigation';
-import store from './Store';
+import { store, persistor } from './Store';
 
 const SetUp = () => (
   <Provider store={store}>
-    <AppNavigation />
+    <PersistGate
+      loading={<ActivityIndicator size="small" color="orange" />}
+      persistor={persistor}
+    >
+      <AppNavigation />
+    </PersistGate>
   </Provider>
 );
 

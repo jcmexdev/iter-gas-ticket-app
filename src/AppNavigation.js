@@ -7,9 +7,9 @@ import SignIn from './screens/signin';
 
 const AppNavigation = () => (
   <Router>
-    <Stack key="root">
-      <Scene key="signIn" component={SignIn} title="Login" initial />
-      <Scene key="home" component={Home} hideNavBar />
+    <Stack key="root" headerMode="none">
+      <Scene key="signIn" component={SignIn} initial />
+      <Scene key="home" component={Home} />
     </Stack>
   </Router>
 );

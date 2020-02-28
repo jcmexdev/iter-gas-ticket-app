@@ -1,14 +1,11 @@
 import * as actions from '../actions/types';
 
-const initialState = {
-  user: null,
-  name: null,
-};
+const initialState = null;
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actions.SET_USER: {
-      return '';
+      return { ...state, fullName: action.payload.fullName };
     }
     default:
       return state;

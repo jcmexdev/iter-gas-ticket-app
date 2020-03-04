@@ -6,3 +6,7 @@ export const SET_USER = (fullName) => ({
     fullName,
   },
 });
+
+export const REMOVE_USER = () => ({
+  type: actions.REMOVE_USER,
+});

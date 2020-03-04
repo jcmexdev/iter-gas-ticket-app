@@ -9,7 +9,6 @@ import {
   SafeAreaView,
   KeyboardAvoidingView,
   Alert,
-  BackHandler,
 } from 'react-native';
 import RNPrint from 'react-native-print';
 import moment from 'moment';
@@ -23,9 +22,12 @@ import {
   Button,
   Title,
 } from 'native-base';
+import { Actions, ActionConst } from 'react-native-router-flux';
+import { connect } from 'react-redux';
+import { REMOVE_USER } from '../../actions';
 import styles from './styles';
 
-export default class Home extends Component {
+class Home extends Component {
   constructor(props) {
     super(props);
     this.initialstate = {
@@ -99,10 +101,6 @@ export default class Home extends Component {
 
     fetch('http://189.194.249.170:83/atsem/url/ticket/guardaTicket.php', {
       method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
       body: form,
     })
       .then((response) => response.json())
@@ -110,7 +108,7 @@ export default class Home extends Component {
         this.setState({ data: response });
         this.sendData();
       })
-      .catch((errors) => console.log('algo salio mal', errors));
+      .catch((errors) => Alert.alert(`Algo salio mal al guardar el registro: ${errors}`));
   };
 
   headText = () => (
@@ -165,7 +163,8 @@ export default class Home extends Component {
                   {
                     text: 'CONFIRMAR',
                     onPress: () => {
-                      BackHandler.exitApp();
+                      this.props.dispatch(REMOVE_USER());
+                      Actions.signIn({ type: ActionConst.RESET });
                     },
                   },
                 ],
@@ -253,3 +252,8 @@ export default class Home extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => ({
+  user: state.user,
+});
+export default connect(mapStateToProps)(Home);

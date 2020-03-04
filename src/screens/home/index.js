@@ -13,14 +13,7 @@ import {
 import RNPrint from 'react-native-print';
 import moment from 'moment';
 import {
-  Icon,
-  Picker,
-  Header,
-  Left,
-  Body,
-  Right,
-  Button,
-  Title,
+  Icon, Picker, Header, Left, Body, Right, Button
 } from 'native-base';
 import { Actions, ActionConst } from 'react-native-router-flux';
 import { connect } from 'react-redux';
@@ -66,19 +59,32 @@ class Home extends Component {
       conductor,
       km,
       costo,
-      despach,
       nombstation,
     } = this.state;
     const hra = moment().format('LTS');
-    const page = `<P align=middle><strong>******* TICKET ITER GAS> *******</strong><P> <h1 style="color:green; text-decoration:'underline">FECHA: ${fech}  HORA: ${hra}</h1> __________________________________________________________________________________________<br><h2 style="color:green; text-decoration:'underline">Numero Ticket: T-000000${data.id}</h2>
-        <h2 style="color:green; text-decoration:'underline">Numero Unidad: ${numUni}</h2><h2>Numero de placa: ${placa}</h2><h2>Nombre conductor: ${conductor}</h2><h2>Kilometraje: ${km}</h2><h2>Costo: $${costo}</h2>
-        <h2>Despachador: ${despach}</h2>
-        <h2>Estacion: ${nombstation}</h2>
-        __________________________________________________________________________________________<br>`;
+    const page = `<p><img style="display: block; margin-left: auto; margin-right: auto;" src="http://189.194.249.170:83/atsem/url/iter-gas-natural-1.png" alt="" width="104" height="104" /></p>
+    <p style="text-align: center;"><strong>Boulevard Alfredo del Mazo No. 522, Col. San Lorenzo Tepatitl&aacute;n, Toluca, Estado de M&eacute;xico, C.P. 50010.</strong></p>
+    <p style="text-align: center;"><strong>T-000000${data.id}</strong></p>
+    <p style="text-align: center;"><strong>FECHA: ${fech} HORA:${hra}</strong></p>
+    <p style="text-align: left;">&nbsp;</p>
+    <p style="text-align: center;"><strong>NUMERO DE UNIDAD:</strong></p>
+    <p style="text-align: center;">${numUni}</p>
+    <p style="text-align: center;"><strong>NUMERO DE PLACA: </strong></p>
+    <p style="text-align: center;">${placa}</p>
+    <p style="text-align: center;"><strong>NOMBRE CONDUCTOR: </strong></p>
+    <p style="text-align: center;">${conductor}</p>
+    <p style="text-align: center;"><strong>KILOMETROS: </strong></p>
+    <p style="text-align: center;">${km}</p>
+    <p style="text-align: center;"><strong>COSTO: </strong></p>
+    <p style="text-align: center;">$${costo}</p>
+    <p style="text-align: center;"><strong>DESPACHADOR: </strong></p>
+    <p style="text-align: center;">${this.props.user.fullName}</p>
+    <p style="text-align: center;"><strong>ESTACION: </strong></p>
+    <p style="text-align: center;">${nombstation}</p>`;
     RNPrint.print({
       html: page,
     }).then(() => {
-      Alert.alert('DATOS INSERTADOS E IMPRESION... CORRECTO');
+      console.log('CORRECTO');
     });
     this.clearInput();
   };
@@ -96,7 +102,7 @@ class Home extends Component {
     form.append('cost', this.state.costo);
     form.append('date', fech);
     form.append('time', hra);
-    form.append('dispatcher', this.state.despach);
+    form.append('dispatcher', this.props.user.fullName);
     form.append('station', this.state.nombstation);
 
     fetch('http://189.194.249.170:83/atsem/url/ticket/guardaTicket.php', {
@@ -145,9 +151,8 @@ class Home extends Component {
       <KeyboardAvoidingView behavior="padding" enabled>
         <Header>
           <Left />
-          <Body>
-            <Title style={{ alignItems: 'center' }}>REGISTRO</Title>
-          </Body>
+
+          <Body />
           <Right>
             <Button
               hasText
@@ -171,7 +176,7 @@ class Home extends Component {
                 { cancelable: false }
               )}
             >
-              <Text>Cerrar sesion</Text>
+              <Text style={{ color: 'white' }}>Cerrar sesión</Text>
             </Button>
           </Right>
         </Header>
@@ -183,7 +188,6 @@ class Home extends Component {
               <TextInput
                 placeholder="Numero Unidad"
                 autoCapitalize="characters"
-                autoFocus
                 returnKeyType="next"
                 style={styles.inputStyle}
                 onChangeText={(text) => this.updateSatet('numUni', text)}
@@ -225,8 +229,9 @@ class Home extends Component {
                 placeholder="Despachador"
                 returnKeyType="next"
                 style={styles.inputStyle}
+                editable={false}
                 onChangeText={(text) => this.updateSatet('despach', text)}
-                value={this.state.despach}
+                value={this.props.user.fullName}
               />
               <Picker
                 mode="dropdown"
@@ -237,6 +242,7 @@ class Home extends Component {
                 onValueChange={(itemValue) => this.setState({ nombstation: itemValue })}
               >
                 <Picker.Item label="Toluca" value="Toluca" />
+                <Picker.Item label="Rayon" value="Rayon" />
                 <Picker.Item label="Zinacantepec" value="Zinacantepec" />
               </Picker>
               <TouchableOpacity
@@ -252,7 +258,6 @@ class Home extends Component {
     );
   }
 }
-
 const mapStateToProps = (state) => ({
   user: state.user,
 });

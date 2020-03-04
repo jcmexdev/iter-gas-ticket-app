@@ -19,6 +19,16 @@ export default {
     borderWidth: 1,
     overflow: 'hidden',
   },
+  inputStyle2: {
+    marginTop: 20,
+    width: 300,
+    height: 40,
+    paddingHorizontal: 10,
+    borderRadius: 50,
+    borderColor: '#08935e',
+    borderWidth: 1,
+    overflow: 'hidden',
+  },
   pickerStyle: {
     marginTop: 20,
     width: 300,

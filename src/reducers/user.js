@@ -1,6 +1,6 @@
 import * as actions from '../actions/types';
 
-const initialState = { fullName: 'PRUEBA' };
+const initialState = { fullName: null };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -8,7 +8,7 @@ const reducer = (state = initialState, action) => {
       return { ...state, fullName: action.payload.fullName };
     }
     case actions.REMOVE_USER: {
-      return null;
+      return initialState;
     }
     default:
       return state;

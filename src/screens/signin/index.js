@@ -31,7 +31,7 @@ class SignIn extends Component {
   }
 
   componentDidMount() {
-    if (this.props.user != null) {
+    if (this.props.user.fullName != null) {
       setTimeout(() => {
         Actions.home({ type: ActionConst.RESET });
       }, 0);

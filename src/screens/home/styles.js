@@ -1,7 +1,5 @@
 export default {
   container: {
-    flex: 1,
-    backgroundColor: '#F5FCFF',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -14,6 +12,7 @@ export default {
     width: 300,
     height: 40,
     paddingHorizontal: 10,
+    paddingLeft: 24,
     borderRadius: 50,
     borderColor: '#08935e',
     borderWidth: 1,
@@ -49,10 +48,12 @@ export default {
     fontSize: 20,
   },
   button: {
-    alignItems: 'center',
+    justifyContent: 'center',
     backgroundColor: '#ed6c1c',
+    flexDirection: 'row',
     padding: 10,
     width: 300,
-    marginVertical: 10,
+    marginTop: 24,
+    borderRadius: 24,
   },
 };

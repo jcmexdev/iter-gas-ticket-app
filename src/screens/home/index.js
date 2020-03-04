@@ -28,10 +28,9 @@ class Home extends Component {
       placa: null,
       conductor: null,
       km: null,
-      costo: '',
+      costo: null,
       fch: null,
       hr: null,
-      despach: null,
       nombstation: 'Toluca',
       selectedPrinter: null,
       date: new Date(),
@@ -51,7 +50,7 @@ class Home extends Component {
     this.setState({ selectedPrinter });
   };
 
-  sendData = () => {
+  printTicket = () => {
     const fech = moment().format('L');
     const {
       data,
@@ -131,7 +130,24 @@ class Home extends Component {
     this.clearInput();
   };
 
+  validateBeforeInsert = () => {
+    const fields = ['numUni', 'placa', 'conductor', 'km', 'costo'];
+    const result = fields.filter((item) => this.state[item] == null);
+    if (result.length > 0) {
+      Alert.alert(
+        'Completa el formulario',
+        'Todos los campos del formulario deben ser llenados'
+      );
+      return false;
+    }
+    return true;
+  };
+
   insertData = () => {
+    if (!this.validateBeforeInsert()) {
+      return 0;
+    }
+
     this.setState({
       isLoading: true,
     });
@@ -155,19 +171,21 @@ class Home extends Component {
     })
       .then((response) => response.json())
       .then((response) => {
-        this.setState({ data: response });
-        this.sendData();
+        this.setState({ data: response, isLoading: false });
+        this.printTicket();
       })
       .catch((errors) => {
+        this.setState({ isLoading: false });
         Alert.alert(`Algo salio mal al guardar el registro: ${errors}`);
       });
+    return true;
   };
 
   headText = () => (
     <View style={styles.container}>
       {this.state.selectedPrinter && <View style={styles.container} />}
       <TouchableOpacity style={styles.button}>
-        <Text>INGRESA DATOS</Text>
+        <Text style={{ color: 'white' }}>INGRESA LOS DATOS DEL TICKET</Text>
       </TouchableOpacity>
     </View>
   );
@@ -297,7 +315,7 @@ class Home extends Component {
               onPress={this.insertData}
             >
               <Text style={{ color: 'white', fontWeight: 'bold' }}>
-                {this.state.isLoading ? 'Enviando datos...' : 'Enviar'}
+                {this.state.isLoading ? 'Enviando datos...' : 'Imprimir'}
               </Text>
               {this.state.isLoading && (
                 <ActivityIndicator style={{ marginLeft: 32 }} color="white" />

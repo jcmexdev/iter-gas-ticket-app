@@ -53,77 +53,109 @@ class Home extends Component {
   printTicket = () => {
     const fech = moment().format('L');
     const {
-      data,
       numUni,
       placa,
       conductor,
       km,
-      costo,
       nombstation,
+      liters,
+      hose,
     } = this.state;
     const hra = moment().format('LTS');
     const page = `
-      <p>
-        <img
-          style="display: block; margin-left: auto; margin-right: auto;"
-          src="http://189.194.249.170:83/atsem/url/iter-gas-natural-1.png"
-          alt=""
-          width="104"
-          height="104"
-        />
-      </p>
-      <p style="margin:0px; margin-top:8px; font-size: 12px; text-align: center;">
-        <strong>
-          Boulevard Alfredo del Mazo No. 522, Col. San Lorenzo Tepatitl&aacute;n,
-          Toluca, Estado de M&eacute;xico, C.P. 50010.
-        </strong>
-      </p>
-      <p style="margin:0px; margin-top:8px; font-size: 12px; text-align: center; ">
-        <strong>T-000000${data.id}</strong>
-      </p>
-      <p style="margin:0px; margin-top:8px; font-size: 12px; text-align: center;">
-        <strong>FECHA:${fech} HORA:${hra}</strong>
-      </p>
-      <p style="margin:0px; margin-top:8px; font-size: 12px; text-align: center;">
-        ${numUni}
-      </p>
-      <p style="margin:0px; margin-top:16px; font-size: 12px; text-align: center;">
-        <strong>NUMERO DE PLACA: </strong>
-      </p>
-      <p style="margin:0px; margin-top:4px; font-size: 12px; text-align: center;">
-        ${placa}
-      </p>
-      <p style="margin:0px; margin-top:16px; font-size: 12px; text-align: center;">
-        <strong>NOMBRE CONDUCTOR: </strong>
-      </p>
-      <p style="margin:0px; margin-top:4px; font-size: 12px; text-align: center;">
-        ${conductor}
-      </p>
-      <p style="margin:0px; margin-top:16px; font-size: 12px; text-align: center;">
-        <strong>KILOMETROS: </strong>
-      </p>
-      <p style="margin:0px; margin-top:4px; font-size: 12px; text-align: center;">
-        ${km}
-      </p>
-      <p style="margin:0px; margin-top:16px; font-size: 12px; text-align: center;">
-        <strong>COSTO: </strong>
-      </p>
-      <p style="margin:0px; margin-top:4px; font-size: 12px; text-align: center;">
-        ${costo}
-      </p>
-      <p style="margin:0px; margin-top:16px; font-size: 12px; text-align: center;">
-        <strong>DESPACHADOR: </strong>
-      </p>
-      <p style="margin:0px; margin-top:4px; font-size: 12px; text-align: center;">
-        ${this.props.user.fullName}
-      </p>
-      <p style=" font-size: 12px; text-align: center;">
-        <strong>ESTACION: </strong>
-      </p>
-      <p style=" font-size: 12px; text-align: center;">
+      <div>
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap');
+        body {
+          margin: 0 auto;
+          font-family: "Roboto Mono", sans-serif;
+          width: 8cm;
+          font-size: 12px;
+        }
+        .logo {
+          width: 200px;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .address {
+          margin-top: 16px;
+          text-align: center;
+          text-transform: uppercase;
+          margin-bottom: 16px;
+        }
+        .folio {
+          text-align: center
+        }
+        .service {
+        }
+        .service__date-time,
+        .service__dispatchers,
+        .products_item,
+        .total {
+          display: flex;
+          justify-content: space-between;
+        }
+        .bordered {
+          border-top: 1px dashed black;
+          padding: 8px 0px;
+        }
+      </style>
+      <div>
+      <img
+        class="logo"
+        src="http://189.194.249.170:83/atsem/url/iter-gas-natural-1.png"
+      />
+      <div class="address">
+        Boulevard Alfredo del Mazo No. 522, Col. San Lorenzo Tepatitl&aacute;n,
+        Toluca, Estado de M&eacute;xico, C.P. 50010.
+      </div>
+      <div class="folio bordered">
+        Documento No. T-000 <br />
         ${nombstation}
-      </p>
-      `;
+      </div>
+      <div class="service bordered">
+        <div class="service__date-time">
+          <span>Fecha: ${fech}</span>
+          <span>Hora: ${hra}</span>
+        </div>
+        <div class="service__dispatchers">
+          <span>Bomba: ${pump}</span>
+          <span>Turno: ${workShift}</span>
+        </div>
+        <div class="service_employee">
+          Manguera: ${hose}
+        </div>
+        <div class="service_employee">
+          Atendido por: ${this.props.user.fullName.toUpperCase()}
+        </div>
+      </div>
+      <div class="client bordered">
+        <div>Cliente: ${conductor}</div>
+        <div>Placa: ${placa}</div>
+        <div>No. Unidad: ${numUni}</div>
+        <div>Kilometros: ${km}</div>
+      </div>
+      <div class="products bordered">
+        <div class="products_item">
+          <span>Producto:</span>
+          <span>GNV</span>
+        </div>
+        <div class="products_item">
+          <span>Cantidad:</span>
+          <span>${liters} (L)</span>
+        </div>
+        <div class="products_item">
+          <span>PVP:</span>
+          <span>$10.00</span>
+        </div>
+      </div>
+      <div class="total bordered">
+        <span>Total:</span>
+        <span>${liters * 10.0}</span>
+      </div>
+    </div>
+      </div>`;
     RNPrint.print({
       html: page,
     }).then(() => {});

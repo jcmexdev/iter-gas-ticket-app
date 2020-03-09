@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
 import {
-  Platform,
-  Text,
-  View,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-  ActivityIndicator,
-  KeyboardAvoidingView,
-  Alert,
-  SafeAreaView,
+  Platform, Text, View, ActivityIndicator, Alert
 } from 'react-native';
 import RNPrint from 'react-native-print';
 import moment from 'moment';
 import {
-  Icon, Picker, Header, Left, Body, Right, Button
+  Icon,
+  Picker,
+  Header,
+  Left,
+  Body,
+  Right,
+  Button,
+  Container,
+  Content,
+  Input,
+  Item,
+  Label,
 } from 'native-base';
 import { Actions, ActionConst } from 'react-native-router-flux';
 import { connect } from 'react-redux';
@@ -30,7 +32,6 @@ class Home extends Component {
       conductor: null,
       km: null,
       liters: null,
-      costo: null,
       fch: null,
       hr: null,
       hose: null,
@@ -56,7 +57,7 @@ class Home extends Component {
   };
 
   printTicket = () => {
-    const fech = moment().format('L');
+    console.log(this.state);
     const {
       numUni,
       placa,
@@ -65,7 +66,10 @@ class Home extends Component {
       nombstation,
       liters,
       hose,
+      pump,
+      workShift,
     } = this.state;
+    const fech = moment().format('L');
     const hra = moment().format('LTS');
     const page = `
       <div>
@@ -116,7 +120,9 @@ class Home extends Component {
         Toluca, Estado de M&eacute;xico, C.P. 50010.
       </div>
       <div class="folio bordered">
-        Documento No. T-000 <br />
+        Documento No. T-${this.state.data.id
+      .toString()
+      .padStart('6', '0')} <br />
         ${nombstation}
       </div>
       <div class="service bordered">
@@ -157,7 +163,7 @@ class Home extends Component {
       </div>
       <div class="total bordered">
         <span>Total:</span>
-        <span>${liters * 10.0}</span>
+        <span>$${Number.parseFloat(liters * 10.0).toFixed(2)}</span>
       </div>
     </div>
       </div>`;
@@ -168,15 +174,7 @@ class Home extends Component {
   };
 
   validateBeforeInsert = () => {
-    const fields = [
-      'numUni',
-      'placa',
-      'conductor',
-      'km',
-      'costo',
-      'hose',
-      'workShift',
-    ];
+    const fields = ['numUni', 'placa', 'conductor', 'km', 'hose', 'workShift'];
     const result = fields.filter((item) => this.state[item] == null);
     if (result.length > 0) {
       Alert.alert(
@@ -220,12 +218,11 @@ class Home extends Component {
     form.append('driverName', this.state.conductor);
     form.append('km', this.state.km);
     form.append('liters', this.state.liters);
-    form.append('cost', this.state.costo);
     form.append('date', fech);
     form.append('time', hra);
     form.append('dispatcher', this.props.user.fullName);
     form.append('station', this.state.nombstation);
-    form.append('workShift', this.state.workShift);
+    form.append('work_shift', this.state.workShift);
     form.append('pump', this.state.pump);
     form.append('hose', this.state.hose);
     fetch('http://189.194.249.170:83/atsem/url/ticket/guardaTicket.php', {
@@ -239,19 +236,11 @@ class Home extends Component {
       })
       .catch((errors) => {
         this.setState({ isLoading: false });
+        console.log(errors);
         Alert.alert(`Algo salio mal al guardar el registro: ${errors}`);
       });
     return true;
   };
-
-  headText = () => (
-    <View style={styles.container}>
-      {this.state.selectedPrinter && <View style={styles.container} />}
-      <TouchableOpacity style={styles.button}>
-        <Text style={{ color: 'white' }}>INGRESA LOS DATOS DEL TICKET</Text>
-      </TouchableOpacity>
-    </View>
-  );
 
   customOptions = () => (
     <View style={styles.container}>
@@ -279,170 +268,191 @@ class Home extends Component {
     this.setState({
       [name]: text,
     });
-    console.log(this.state);
   };
 
   render() {
     return (
-      <KeyboardAvoidingView
-        behavior={this.isIos ? 'padding' : ''}
-        keyboardVerticalOffset={this.isIos ? 44 : 0}
-      >
-        <SafeAreaView>
-          <ScrollView>
-            <Header>
-              <Left />
+      <Container>
+        <Header>
+          <Left />
+          <Body>
+            <Text>Tickets</Text>
+          </Body>
+          <Right>
+            <Button
+              hasText
+              transparent
+              onPress={() => Alert.alert(
+                'Atención!',
+                'Estas a punto de salir',
+                [
+                  {
+                    text: 'CANCELAR',
+                    onPress: () => null,
+                  },
+                  {
+                    text: 'CONFIRMAR',
+                    onPress: () => {
+                      this.props.dispatch(REMOVE_USER());
+                      Actions.signIn({ type: ActionConst.RESET });
+                    },
+                  },
+                ],
+                { cancelable: false }
+              )}
+            >
+              <Text style={{ color: 'white' }}>Cerrar sesión</Text>
+            </Button>
+          </Right>
+        </Header>
 
-              <Body />
-              <Right>
-                <Button
-                  hasText
-                  transparent
-                  onPress={() => Alert.alert(
-                    'Atención!',
-                    'Estas a punto de salir',
-                    [
-                      {
-                        text: 'CANCELAR',
-                        onPress: () => null,
-                      },
-                      {
-                        text: 'CONFIRMAR',
-                        onPress: () => {
-                          this.props.dispatch(REMOVE_USER());
-                          Actions.signIn({ type: ActionConst.RESET });
-                        },
-                      },
-                    ],
-                    { cancelable: false }
-                  )}
-                >
-                  <Text style={{ color: 'white' }}>Cerrar sesión</Text>
-                </Button>
-              </Right>
-            </Header>
-            {Platform.OS === 'android' && this.headText()}
-            {Platform.OS === 'ios' && this.customOptions()}
-            <View style={styles.container}>
-              <TextInput
-                placeholder="Numero Unidad"
-                autoCapitalize="characters"
-                returnKeyType="next"
-                style={styles.inputStyle}
-                onChangeText={(text) => this.updateSatet('numUni', text)}
-                value={this.state.numUni}
-              />
-              <TextInput
-                placeholder="Placa"
-                autoCapitalize="characters"
-                returnKeyType="next"
-                style={styles.inputStyle}
-                onChangeText={(text) => this.updateSatet('placa', text)}
-                value={this.state.placa}
-              />
-              <TextInput
-                placeholder="Nombre Conductor"
-                autoCapitalize="characters"
-                returnKeyType="next"
-                style={styles.inputStyle}
-                onChangeText={(text) => this.updateSatet('conductor', text)}
-                value={this.state.conductor}
-              />
-              <TextInput
-                placeholder="Kilometraje"
-                keyboardType="numeric"
-                returnKeyType="next"
-                style={styles.inputStyle}
-                onChangeText={(text) => this.updateSatet('km', text)}
-                value={this.state.km}
-              />
-              <TextInput
-                placeholder="Litros"
-                keyboardType="numeric"
-                returnKeyType="next"
-                style={styles.inputStyle}
-                onChangeText={(text) => this.updateSatet('liters', text)}
-                value={this.state.liters}
-              />
-              <TextInput
-                placeholder="Costo"
-                keyboardType="numeric"
-                returnKeyType="next"
-                style={styles.inputStyle}
-                onChangeText={(text) => this.updateSatet('costo', text)}
-                value={this.state.costo}
-              />
-              <TextInput
-                placeholder="Despachador"
-                returnKeyType="next"
-                style={styles.inputStyle}
-                editable={false}
-                onChangeText={(text) => this.updateSatet('despach', text)}
-                value={this.props.user.fullName}
-              />
-              {Platform.OS === 'android' && this.customOptions2()}
-              <Picker
-                mode="dropdown"
-                iosHeader="Estación"
-                iosIcon={<Icon name="arrow-down" />}
-                style={styles.pickerStyle}
-                selectedValue={this.state.nombstation}
-                onValueChange={(itemValue) => this.setState({ nombstation: itemValue })}
-              >
-                <Picker.Item label="Toluca" value="Toluca" />
-                <Picker.Item label="Rayon" value="Rayon" />
-                <Picker.Item label="Zinacantepec" value="Zinacantepec" />
-              </Picker>
-              <Picker
-                mode="dropdown"
-                iosHeader="Turno"
-                iosIcon={<Icon name="arrow-down" />}
-                style={styles.pickerStyle}
-                selectedValue={this.state.workShift}
-                onValueChange={(itemValue) => this.setState({ workShift: itemValue })}
-              >
-                <Picker.Item label="Selecciona Turno" value="" />
-                <Picker.Item label="1" value="1" />
-                <Picker.Item label="2" value="2" />
-              </Picker>
-              <Picker
-                mode="dropdown"
-                iosHeader="Manguera"
-                iosIcon={<Icon name="arrow-down" />}
-                style={styles.pickerStyle}
-                selectedValue={this.state.hose}
-                onValueChange={(itemValue) => this.setState({ hose: itemValue })}
-              >
-                <Picker.Item label="Selecciona Manguera" value="" />
-                <Picker.Item label="1" value="1" />
-                <Picker.Item label="2" value="2" />
-                <Picker.Item label="3" value="3" />
-                <Picker.Item label="4" value="4" />
-                <Picker.Item label="5" value="5" />
-                <Picker.Item label="6" value="6" />
-                <Picker.Item label="7" value="7" />
-                <Picker.Item label="8" value="8" />
-                <Picker.Item label="9" value="9" />
-                <Picker.Item label="10" value="10" />
-                <Picker.Item label="11" value="11" />
-                <Picker.Item label="12" value="12" />
-              </Picker>
-              <TouchableOpacity
-                rounded
-                style={styles.button}
-                onPress={this.insertData}
-              >
-                <Text style={{ color: 'white', fontWeight: 'bold' }}>
-                  {this.state.isLoading ? 'Enviando datos...' : 'Imprimir'}
-                </Text>
-                {this.state.isLoading && (
-                  <ActivityIndicator style={{ marginLeft: 32 }} color="white" />
-                )}
-              </TouchableOpacity>
-            </View>
-          </ScrollView>
-        </SafeAreaView>
-      </KeyboardAvoidingView>
+        <Content style={{ paddingHorizontal: 16 }}>
+          {Platform.OS === 'ios' && this.customOptions()}
+          <Label style={styles.title}>INGREA LA INFORMACIÓN DEL TICKET</Label>
+          <Label style={styles.label}>NÚMERO DE UNIDAD</Label>
+
+          <Item style={styles.item} rounded>
+            <Input
+              placeholder="Número de unidad"
+              autoCapitalize="characters"
+              returnKeyType="next"
+              /* eslint no-underscore-dangle: ["error", { "allow": ["_root"] }] */
+              onSubmitEditing={() => this.inputPlate._root.focus()}
+              onChangeText={(text) => this.updateSatet('numUni', text)}
+              value={this.state.numUni}
+            />
+          </Item>
+          <Label style={styles.label}>NÚMERO DE PLACA</Label>
+          <Item style={styles.item} rounded>
+            <Input
+              rounded
+              placeholder="Placa"
+              autoCapitalize="characters"
+              returnKeyType="next"
+              ref={(input) => {
+                this.inputPlate = input;
+              }}
+              /* eslint no-underscore-dangle: ["error", { "allow": ["_root"] }] */
+              onSubmitEditing={() => this.inputDriverName._root.focus()}
+              onChangeText={(text) => this.updateSatet('placa', text)}
+              value={this.state.placa}
+            />
+          </Item>
+
+          <Label style={styles.label}>NOMBRE DEL CONDUCTOR</Label>
+          <Item style={styles.item} rounded>
+            <Input
+              placeholder="Nombre Conductor"
+              autoCapitalize="characters"
+              returnKeyType="next"
+              ref={(input) => {
+                this.inputDriverName = input;
+              }}
+              /* eslint no-underscore-dangle: ["error", { "allow": ["_root"] }] */
+              onSubmitEditing={() => this.inputKilometers._root.focus()}
+              onChangeText={(text) => this.updateSatet('conductor', text)}
+              value={this.state.conductor}
+            />
+          </Item>
+
+          <Label style={styles.label}>KILOMETRAJE</Label>
+          <Item style={styles.item} rounded>
+            <Input
+              placeholder="Kilometraje"
+              keyboardType="numeric"
+              returnKeyType="next"
+              ref={(input) => {
+                this.inputKilometers = input;
+              }}
+              /* eslint no-underscore-dangle: ["error", { "allow": ["_root"] }] */
+              onSubmitEditing={() => this.inputLiters._root.focus()}
+              onChangeText={(text) => this.updateSatet('km', text)}
+              value={this.state.km}
+            />
+          </Item>
+
+          <Label style={styles.label}>CANTIDAD DE LITROS</Label>
+          <Item style={styles.item} rounded>
+            <Input
+              placeholder="Litros"
+              keyboardType="numeric"
+              returnKeyType="next"
+              ref={(input) => {
+                this.inputLiters = input;
+              }}
+              onChangeText={(text) => this.updateSatet('liters', text)}
+              value={this.state.liters}
+            />
+          </Item>
+          <Label style={styles.label}>ESTACIÓN DE SERVICIO</Label>
+          <Item rounded>
+            <Picker
+              mode="dropdown"
+              iosHeader="Selecciona una estación"
+              iosIcon={<Icon name="arrow-down" />}
+              selectedValue={this.state.nombstation}
+              onValueChange={(itemValue) => this.setState({ nombstation: itemValue })}
+            >
+              <Picker.Item label="Toluca" value="Toluca" />
+              <Picker.Item label="Rayon" value="Rayon" />
+              <Picker.Item label="Zinacantepec" value="Zinacantepec" />
+            </Picker>
+          </Item>
+
+          <Label style={styles.label}>SELECCIONA EL TURNO</Label>
+          <Item rounded>
+            <Picker
+              mode="dropdown"
+              iosHeader="Turno"
+              iosIcon={<Icon name="arrow-down" />}
+              selectedValue={this.state.workShift}
+              onValueChange={(itemValue) => this.setState({ workShift: itemValue })}
+            >
+              <Picker.Item label="Selecciona un turno" value="" />
+              <Picker.Item label="1" value="1" />
+              <Picker.Item label="2" value="2" />
+            </Picker>
+          </Item>
+
+          <Label style={styles.label}>SELECCIONA LA MANGUERA</Label>
+          <Item rounded>
+            <Picker
+              mode="dropdown"
+              iosHeader="Manguera"
+              iosIcon={<Icon name="arrow-down" />}
+              selectedValue={this.state.hose}
+              onValueChange={(itemValue) => this.setState({ hose: itemValue })}
+            >
+              <Picker.Item label="Selecciona una Manguera" value="" />
+              <Picker.Item label="1" value={1} />
+              <Picker.Item label="2" value={2} />
+              <Picker.Item label="3" value={3} />
+              <Picker.Item label="4" value={4} />
+              <Picker.Item label="5" value={5} />
+              <Picker.Item label="6" value={6} />
+              <Picker.Item label="7" value={7} />
+              <Picker.Item label="8" value={8} />
+              <Picker.Item label="9" value={9} />
+              <Picker.Item label="10" value={10} />
+              <Picker.Item label="11" value={11} />
+              <Picker.Item label="12" value={12} />
+            </Picker>
+          </Item>
+          <Button
+            full
+            rounded
+            onPress={this.insertData}
+            style={styles.sendButton}
+          >
+            <Text style={{ color: 'white', fontWeight: 'bold' }}>
+              {this.state.isLoading ? 'Enviando datos...' : 'Imprimir ticket'}
+            </Text>
+            {this.state.isLoading && (
+              <ActivityIndicator style={{ marginLeft: 32 }} color="white" />
+            )}
+          </Button>
+        </Content>
+      </Container>
     );
   }
 }

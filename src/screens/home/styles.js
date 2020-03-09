@@ -56,4 +56,20 @@ export default {
     marginTop: 24,
     borderRadius: 24,
   },
+  item: {},
+  label: {
+    marginLeft: 16,
+    marginTop: 8,
+    fontSize: 12,
+    color: '#ed6c1c',
+  },
+  sendButton: {
+    marginVertical: 16,
+    backgroundColor: '#ed6c1c',
+  },
+  title: {
+    alignSelf: 'center',
+    color: '#ed6c1c',
+    fontWeight: 'bold',
+  },
 };

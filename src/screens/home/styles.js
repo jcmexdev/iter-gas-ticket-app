@@ -39,6 +39,7 @@ export default {
     alignSelf: 'center',
     color: '#ed6c1c',
     fontWeight: 'bold',
+    marginTop: 24,
   },
   error: {
     fontWeight: 'bold',

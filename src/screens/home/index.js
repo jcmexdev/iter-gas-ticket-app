@@ -8,7 +8,6 @@ import {
   Icon,
   Picker,
   Header,
-  Left,
   Body,
   Right,
   Button,
@@ -61,7 +60,6 @@ class Home extends Component {
   };
 
   printTicket = () => {
-    console.log(this.state);
     const {
       numUni,
       placa,
@@ -248,7 +246,6 @@ class Home extends Component {
       })
       .catch((errors) => {
         this.setState({ isLoading: false });
-        console.log(errors);
         Alert.alert(`Algo salio mal al guardar el registro: ${errors}`);
       });
     return true;
@@ -298,7 +295,6 @@ class Home extends Component {
         },
       }));
     }
-    console.log(this.state.km);
   };
 
   handleLiters = () => {
@@ -329,10 +325,12 @@ class Home extends Component {
   render() {
     return (
       <Container>
-        <Header>
-          <Left />
+        <Header
+          style={{ backgroundColor: '#ed6c1c' }}
+          androidStatusBarColor="black"
+        >
           <Body>
-            <Text>Tickets</Text>
+            <Text style={{ color: 'white', fontSize: 22 }}>Tickets</Text>
           </Body>
           <Right>
             <Button
@@ -357,14 +355,14 @@ class Home extends Component {
                 { cancelable: false }
               )}
             >
-              <Text style={{ color: 'white' }}>Cerrar sesión</Text>
+              <Text style={{ color: 'white' }}>Salir</Text>
             </Button>
           </Right>
         </Header>
 
         <Content style={{ paddingHorizontal: 16 }}>
           {Platform.OS === 'ios' && this.customOptions()}
-          <Label style={styles.title}>INGREA LA INFORMACIÓN DEL TICKET</Label>
+          <Label style={styles.title}>INGRESA LA INFORMACIÓN DEL TICKET</Label>
           <Label style={styles.label}>NÚMERO DE UNIDAD</Label>
 
           <Item style={styles.item} rounded>

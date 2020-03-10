@@ -42,6 +42,10 @@ class Home extends Component {
       date: new Date(),
       data: [],
       isLoading: false,
+      errors: {
+        liters: null,
+        kilometers: null,
+      },
     };
 
     this.state = this.initialstate;
@@ -145,7 +149,7 @@ class Home extends Component {
         <div>Cliente: ${conductor}</div>
         <div>Placa: ${placa}</div>
         <div>No. Unidad: ${numUni}</div>
-        <div>Kilometros: ${km}</div>
+        <div>Kilómetros: ${km}</div>
       </div>
       <div class="products bordered">
         <div class="products_item">
@@ -174,6 +178,14 @@ class Home extends Component {
   };
 
   validateBeforeInsert = () => {
+    const { liters, kilometers } = this.state.errors;
+    if (liters != null || kilometers != null) {
+      Alert.alert(
+        '!Datos incorrectos¡',
+        'Tienes algún dato incorrecto, revisa la información e intenta de nuevo.'
+      );
+      return false;
+    }
     const fields = ['numUni', 'placa', 'conductor', 'km', 'hose', 'workShift'];
     const result = fields.filter((item) => this.state[item] == null);
     if (result.length > 0) {
@@ -264,10 +276,54 @@ class Home extends Component {
     </View>
   );
 
-  updateSatet = (name, text) => {
+  updateState = (name, text) => {
     this.setState({
       [name]: text,
     });
+  };
+
+  handleKilometers = () => {
+    if (Number.isNaN(this.state.km)) {
+      this.setState((prevState) => ({
+        errors: {
+          ...prevState.errors,
+          kilometers: ' *DEBE SER UN NÚMERO VÁLIDO',
+        },
+      }));
+    } else {
+      this.setState((prevState) => ({
+        errors: {
+          ...prevState.errors,
+          kilometers: null,
+        },
+      }));
+    }
+    console.log(this.state.km);
+  };
+
+  handleLiters = () => {
+    if (Number.isNaN(this.state.liters)) {
+      this.setState((prevState) => ({
+        errors: {
+          ...prevState.errors,
+          liters: ' *DEBE SER UN NÚMERO VÁLIDO',
+        },
+      }));
+    } else if (this.state.liters < 1) {
+      this.setState((prevState) => ({
+        errors: {
+          ...prevState.errors,
+          liters: '*DEBE SER MAYOR O IGUAL A 1.0',
+        },
+      }));
+    } else {
+      this.setState((prevState) => ({
+        errors: {
+          ...prevState.errors,
+          liters: null,
+        },
+      }));
+    }
   };
 
   render() {
@@ -318,7 +374,7 @@ class Home extends Component {
               returnKeyType="next"
               /* eslint no-underscore-dangle: ["error", { "allow": ["_root"] }] */
               onSubmitEditing={() => this.inputPlate._root.focus()}
-              onChangeText={(text) => this.updateSatet('numUni', text)}
+              onChangeText={(text) => this.updateState('numUni', text)}
               value={this.state.numUni}
             />
           </Item>
@@ -334,7 +390,7 @@ class Home extends Component {
               }}
               /* eslint no-underscore-dangle: ["error", { "allow": ["_root"] }] */
               onSubmitEditing={() => this.inputDriverName._root.focus()}
-              onChangeText={(text) => this.updateSatet('placa', text)}
+              onChangeText={(text) => this.updateState('placa', text)}
               value={this.state.placa}
             />
           </Item>
@@ -350,13 +406,23 @@ class Home extends Component {
               }}
               /* eslint no-underscore-dangle: ["error", { "allow": ["_root"] }] */
               onSubmitEditing={() => this.inputKilometers._root.focus()}
-              onChangeText={(text) => this.updateSatet('conductor', text)}
+              onChangeText={(text) => this.updateState('conductor', text)}
               value={this.state.conductor}
             />
           </Item>
 
-          <Label style={styles.label}>KILOMETRAJE</Label>
-          <Item style={styles.item} rounded>
+          <Label
+            style={[styles.label, this.state.errors.kilometers && styles.error]}
+          >
+            KILOMETRAJE
+            {' '}
+            {this.state.errors.kilometers}
+          </Label>
+          <Item
+            style={styles.item}
+            rounded
+            error={this.state.errors.kilometers && true}
+          >
             <Input
               placeholder="Kilometraje"
               keyboardType="numeric"
@@ -366,13 +432,24 @@ class Home extends Component {
               }}
               /* eslint no-underscore-dangle: ["error", { "allow": ["_root"] }] */
               onSubmitEditing={() => this.inputLiters._root.focus()}
-              onChangeText={(text) => this.updateSatet('km', text)}
+              onEndEditing={this.handleKilometers}
+              onChangeText={(text) => this.updateState('km', text)}
               value={this.state.km}
             />
           </Item>
 
-          <Label style={styles.label}>CANTIDAD DE LITROS</Label>
-          <Item style={styles.item} rounded>
+          <Label
+            style={[styles.label, this.state.errors.liters && styles.error]}
+          >
+            CANTIDAD DE LITROS
+            {' '}
+            {this.state.errors.liters}
+          </Label>
+          <Item
+            rounded
+            style={styles.item}
+            error={this.state.errors.liters && true}
+          >
             <Input
               placeholder="Litros"
               keyboardType="numeric"
@@ -380,7 +457,8 @@ class Home extends Component {
               ref={(input) => {
                 this.inputLiters = input;
               }}
-              onChangeText={(text) => this.updateSatet('liters', text)}
+              onChangeText={(text) => this.updateState('liters', text)}
+              onEndEditing={this.handleLiters}
               value={this.state.liters}
             />
           </Item>

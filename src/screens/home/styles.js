@@ -7,27 +7,6 @@ export default {
     fontSize: 20,
     color: '#fff',
   },
-  inputStyle: {
-    marginTop: 20,
-    width: 300,
-    height: 40,
-    paddingHorizontal: 10,
-    paddingLeft: 24,
-    borderRadius: 50,
-    borderColor: '#08935e',
-    borderWidth: 1,
-    overflow: 'hidden',
-  },
-  inputStyle2: {
-    marginTop: 20,
-    width: 300,
-    height: 40,
-    paddingHorizontal: 10,
-    borderRadius: 50,
-    borderColor: '#08935e',
-    borderWidth: 1,
-    overflow: 'hidden',
-  },
   pickerStyle: {
     marginTop: 20,
     width: 300,
@@ -43,20 +22,9 @@ export default {
     color: '#ed6c1c',
     fontSize: 20,
   },
-  text: {
-    color: '#010101',
-    fontSize: 20,
+  item: {
+    borderWidth: 3,
   },
-  button: {
-    justifyContent: 'center',
-    backgroundColor: '#ed6c1c',
-    flexDirection: 'row',
-    padding: 10,
-    width: 300,
-    marginTop: 24,
-    borderRadius: 24,
-  },
-  item: {},
   label: {
     marginLeft: 16,
     marginTop: 8,
@@ -71,5 +39,9 @@ export default {
     alignSelf: 'center',
     color: '#ed6c1c',
     fontWeight: 'bold',
+  },
+  error: {
+    fontWeight: 'bold',
+    color: 'red',
   },
 };

@@ -41,10 +41,8 @@ class Home extends Component {
       date: new Date(),
       data: [],
       isLoading: false,
-      errors: {
-        liters: null,
-        kilometers: null,
-      },
+      errors_liters: null,
+      errors_kilometers: null,
     };
 
     this.state = this.initialstate;
@@ -176,7 +174,8 @@ class Home extends Component {
   };
 
   validateBeforeInsert = () => {
-    const { liters, kilometers } = this.state.errors;
+    const liters = this.state.errors_liters;
+    const kilometers = this.state.errors_kilometers;
     if (liters != null || kilometers != null) {
       Alert.alert(
         '!Datos incorrectos¡',
@@ -197,6 +196,8 @@ class Home extends Component {
   };
 
   insertData = () => {
+    this.handleLiters();
+    this.handleLiters();
     if (!this.validateBeforeInsert()) {
       return 0;
     }
@@ -280,45 +281,36 @@ class Home extends Component {
   };
 
   handleKilometers = () => {
-    if (Number.isNaN(this.state.km)) {
-      this.setState((prevState) => ({
-        errors: {
-          ...prevState.errors,
-          kilometers: ' *DEBE SER UN NÚMERO VÁLIDO',
-        },
-      }));
+    // eslint-disable-next-line no-restricted-globals
+    if (isNaN(this.state.km)) {
+      this.setState({
+        errors_kilometers: ' *DEBE SER UN NÚMERO VÁLIDO',
+      });
+    } else if (this.state.km < 1) {
+      this.setState({
+        errors_kilometers: ' *DEBE SER MAYOR O IGUAL A 1.0',
+      });
     } else {
-      this.setState((prevState) => ({
-        errors: {
-          ...prevState.errors,
-          kilometers: null,
-        },
-      }));
+      this.setState({
+        errors_kilometers: null,
+      });
     }
   };
 
   handleLiters = () => {
-    if (Number.isNaN(this.state.liters)) {
-      this.setState((prevState) => ({
-        errors: {
-          ...prevState.errors,
-          liters: ' *DEBE SER UN NÚMERO VÁLIDO',
-        },
-      }));
+    // eslint-disable-next-line no-restricted-globals
+    if (isNaN(this.state.liters)) {
+      this.setState({
+        errors_liters: ' *DEBE SER UN NÚMERO VÁLIDO',
+      });
     } else if (this.state.liters < 1) {
-      this.setState((prevState) => ({
-        errors: {
-          ...prevState.errors,
-          liters: '*DEBE SER MAYOR O IGUAL A 1.0',
-        },
-      }));
+      this.setState({
+        errors_liters: ' *DEBE SER MAYOR O IGUAL A 1.0',
+      });
     } else {
-      this.setState((prevState) => ({
-        errors: {
-          ...prevState.errors,
-          liters: null,
-        },
-      }));
+      this.setState({
+        errors_liters: null,
+      });
     }
   };
 
@@ -410,16 +402,16 @@ class Home extends Component {
           </Item>
 
           <Label
-            style={[styles.label, this.state.errors.kilometers && styles.error]}
+            style={[styles.label, this.state.errors_kilometers && styles.error]}
           >
             KILOMETRAJE
             {' '}
-            {this.state.errors.kilometers}
+            {this.state.errors_kilometers}
           </Label>
           <Item
             style={styles.item}
             rounded
-            error={this.state.errors.kilometers && true}
+            error={this.state.errors_kilometers && true}
           >
             <Input
               placeholder="Kilometraje"
@@ -437,16 +429,16 @@ class Home extends Component {
           </Item>
 
           <Label
-            style={[styles.label, this.state.errors.liters && styles.error]}
+            style={[styles.label, this.state.errors_liters && styles.error]}
           >
             CANTIDAD DE LITROS
             {' '}
-            {this.state.errors.liters}
+            {this.state.errors_liters}
           </Label>
           <Item
             rounded
             style={styles.item}
-            error={this.state.errors.liters && true}
+            error={this.state.errors_liters && true}
           >
             <Input
               placeholder="Litros"

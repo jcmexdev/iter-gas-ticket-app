@@ -1,8 +1,8 @@
 platform :ios, '9.0'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
-target 'ticketApp' do
-  # Pods for ticketApp
+target 'IterGNVTickets' do
+  # Pods for IterGNVTickets
   pod 'FBLazyVector', :path => "../node_modules/react-native/Libraries/FBLazyVector"
   pod 'FBReactNativeSpec', :path => "../node_modules/react-native/Libraries/FBReactNativeSpec"
   pod 'RCTRequired', :path => "../node_modules/react-native/Libraries/RCTRequired"
@@ -34,7 +34,7 @@ target 'ticketApp' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  target 'ticketAppTests' do
+  target 'IterGNVTicketsTests' do
     inherit! :search_paths
     # Pods for testing
   end
@@ -42,10 +42,10 @@ target 'ticketApp' do
   use_native_modules!
 end
 
-target 'ticketApp-tvOS' do
-  # Pods for ticketApp-tvOS
+target 'IterGNVTickets-tvOS' do
+  # Pods for IterGNVTickets-tvOS
 
-  target 'ticketApp-tvOSTests' do
+  target 'IterGNVTickets-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end

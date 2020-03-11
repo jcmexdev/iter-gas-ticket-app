@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* ticketAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ticketAppTests.m */; };
+		00E356F31AD99517003FC87E /* IterGNVTicketsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* IterGNVTicketsTests.m */; };
 		032F302DC9E149C1A1E25562 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE040940C3CE478EB3E1FB4C /* MaterialIcons.ttf */; };
-		0B822446C13861DAF447B839 /* libPods-ticketAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B88C91F8E09E3BC005B1D6A8 /* libPods-ticketAppTests.a */; };
+		0B822446C13861DAF447B839 /* libPods-IterGNVTicketsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B88C91F8E09E3BC005B1D6A8 /* libPods-IterGNVTicketsTests.a */; };
 		0BD758619F0946D0804CDB9B /* Roboto_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CCA8DF51317E465D9E23C2F4 /* Roboto_medium.ttf */; };
-		0C5EAE91FACDE54EE238F926 /* libPods-ticketApp-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6FAE9A59DFC64E7FCD3F69F /* libPods-ticketApp-tvOSTests.a */; };
+		0C5EAE91FACDE54EE238F926 /* libPods-IterGNVTickets-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6FAE9A59DFC64E7FCD3F69F /* libPods-IterGNVTickets-tvOSTests.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -21,12 +21,12 @@
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2DCD954D1E0B4F2C00145EB5 /* ticketAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ticketAppTests.m */; };
+		2DCD954D1E0B4F2C00145EB5 /* IterGNVTicketsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* IterGNVTicketsTests.m */; };
 		2F7A1B9194D9475693FBECC1 /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7291BA2019124F10B3F7D787 /* FontAwesome5_Brands.ttf */; };
 		33A6D5906AA240CCA1C6A61C /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D9441A3352C4464881E0ED62 /* Ionicons.ttf */; };
 		403403FA2AAB4B93A09FCD05 /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89477B4CC9994F6996B17C73 /* FontAwesome5_Regular.ttf */; };
-		5310D75FE6750E71604AE909 /* libPods-ticketApp-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A560711AA8A73BAAD17166E2 /* libPods-ticketApp-tvOS.a */; };
-		54936AC235E77A8213EB8E89 /* libPods-ticketApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D59D06BC4B26A7B4452A100C /* libPods-ticketApp.a */; };
+		5310D75FE6750E71604AE909 /* libPods-IterGNVTickets-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A560711AA8A73BAAD17166E2 /* libPods-IterGNVTickets-tvOS.a */; };
+		54936AC235E77A8213EB8E89 /* libPods-IterGNVTickets.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D59D06BC4B26A7B4452A100C /* libPods-IterGNVTickets.a */; };
 		8CFECC2D880841368C413DB6 /* Roboto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9A11C235995446AEB264DFC6 /* Roboto.ttf */; };
 		8F0DE2C030EA4E35BCC65967 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C91C4C175194F3CA443E9D0 /* Foundation.ttf */; };
 		9C2F1259EC8946B4BBC7DCB0 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E17E0CA6948B40B4824B0101 /* FontAwesome.ttf */; };
@@ -47,64 +47,64 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = ticketApp;
+			remoteInfo = IterGNVTickets;
 		};
 		2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
-			remoteInfo = "ticketApp-tvOS";
+			remoteInfo = "IterGNVTickets-tvOS";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
-		00E356EE1AD99517003FC87E /* ticketAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ticketAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* IterGNVTicketsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IterGNVTicketsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* ticketAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ticketAppTests.m; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* ticketApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ticketApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ticketApp/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ticketApp/AppDelegate.m; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* IterGNVTicketsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IterGNVTicketsTests.m; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* IterGNVTickets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IterGNVTickets.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = IterGNVTickets/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = IterGNVTickets/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ticketApp/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ticketApp/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ticketApp/main.m; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = IterGNVTickets/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = IterGNVTickets/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = IterGNVTickets/main.m; sourceTree = "<group>"; };
 		22CF19D1987C418180F45584 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/native-base/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
-		2D02E47B1E0B4A5D006451C7 /* ticketApp-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ticketApp-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D02E4901E0B4A5D006451C7 /* ticketApp-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ticketApp-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2F57C9618556C3D39599F9E4 /* Pods-ticketApp-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ticketApp-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-ticketApp-tvOS/Pods-ticketApp-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		2D02E47B1E0B4A5D006451C7 /* IterGNVTickets-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IterGNVTickets-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E4901E0B4A5D006451C7 /* IterGNVTickets-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IterGNVTickets-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F57C9618556C3D39599F9E4 /* Pods-IterGNVTickets-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IterGNVTickets-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-IterGNVTickets-tvOS/Pods-IterGNVTickets-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		30E37BC717F04BC6BB2AE7B0 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/native-base/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		3E8BC87EB3DA417B95D9B1F5 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/native-base/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
 		4AA8EB1BF8D046E8B2FB3CB7 /* rubicon-icon-font.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "rubicon-icon-font.ttf"; path = "../node_modules/native-base/Fonts/rubicon-icon-font.ttf"; sourceTree = "<group>"; };
-		4BE1C508F29F34E90636BFE5 /* Pods-ticketAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ticketAppTests.release.xcconfig"; path = "Target Support Files/Pods-ticketAppTests/Pods-ticketAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		4BE1C508F29F34E90636BFE5 /* Pods-IterGNVTicketsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IterGNVTicketsTests.release.xcconfig"; path = "Target Support Files/Pods-IterGNVTicketsTests/Pods-IterGNVTicketsTests.release.xcconfig"; sourceTree = "<group>"; };
 		4C91C4C175194F3CA443E9D0 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/native-base/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
-		52DD2A049DECA0279C01F1E7 /* Pods-ticketApp-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ticketApp-tvOS.release.xcconfig"; path = "Target Support Files/Pods-ticketApp-tvOS/Pods-ticketApp-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		52DD2A049DECA0279C01F1E7 /* Pods-IterGNVTickets-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IterGNVTickets-tvOS.release.xcconfig"; path = "Target Support Files/Pods-IterGNVTickets-tvOS/Pods-IterGNVTickets-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		5CB52002A8A4492896630CC5 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/native-base/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
-		7095209E9FCC40386E72A1F7 /* Pods-ticketApp-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ticketApp-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-ticketApp-tvOSTests/Pods-ticketApp-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7095209E9FCC40386E72A1F7 /* Pods-IterGNVTickets-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IterGNVTickets-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-IterGNVTickets-tvOSTests/Pods-IterGNVTickets-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7291BA2019124F10B3F7D787 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/native-base/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		89477B4CC9994F6996B17C73 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/native-base/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		8DB24A780E8A45758B364D9B /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/native-base/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		9A11C235995446AEB264DFC6 /* Roboto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto.ttf; path = "../node_modules/native-base/Fonts/Roboto.ttf"; sourceTree = "<group>"; };
-		A1D8E1DC9D353FF3A1755DAF /* Pods-ticketAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ticketAppTests.debug.xcconfig"; path = "Target Support Files/Pods-ticketAppTests/Pods-ticketAppTests.debug.xcconfig"; sourceTree = "<group>"; };
-		A560711AA8A73BAAD17166E2 /* libPods-ticketApp-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ticketApp-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1D8E1DC9D353FF3A1755DAF /* Pods-IterGNVTicketsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IterGNVTicketsTests.debug.xcconfig"; path = "Target Support Files/Pods-IterGNVTicketsTests/Pods-IterGNVTicketsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A560711AA8A73BAAD17166E2 /* libPods-IterGNVTickets-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IterGNVTickets-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAA66BFA10FF447295A1E92E /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/native-base/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
 		AE040940C3CE478EB3E1FB4C /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/native-base/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		AF1E4BC8FC9546918A610F69 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/native-base/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		AFA62392016141B191F8FE16 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/native-base/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
-		B4597D6A709DCEB80CAF3B74 /* Pods-ticketApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ticketApp.debug.xcconfig"; path = "Target Support Files/Pods-ticketApp/Pods-ticketApp.debug.xcconfig"; sourceTree = "<group>"; };
-		B88C91F8E09E3BC005B1D6A8 /* libPods-ticketAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ticketAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BEFBB01C2DC4ABE1F1444A4B /* Pods-ticketApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ticketApp.release.xcconfig"; path = "Target Support Files/Pods-ticketApp/Pods-ticketApp.release.xcconfig"; sourceTree = "<group>"; };
+		B4597D6A709DCEB80CAF3B74 /* Pods-IterGNVTickets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IterGNVTickets.debug.xcconfig"; path = "Target Support Files/Pods-IterGNVTickets/Pods-IterGNVTickets.debug.xcconfig"; sourceTree = "<group>"; };
+		B88C91F8E09E3BC005B1D6A8 /* libPods-IterGNVTicketsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IterGNVTicketsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEFBB01C2DC4ABE1F1444A4B /* Pods-IterGNVTickets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IterGNVTickets.release.xcconfig"; path = "Target Support Files/Pods-IterGNVTickets/Pods-IterGNVTickets.release.xcconfig"; sourceTree = "<group>"; };
 		CCA8DF51317E465D9E23C2F4 /* Roboto_medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto_medium.ttf; path = "../node_modules/native-base/Fonts/Roboto_medium.ttf"; sourceTree = "<group>"; };
-		D59D06BC4B26A7B4452A100C /* libPods-ticketApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ticketApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D6FBC37B9C793C38F3C353DF /* Pods-ticketApp-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ticketApp-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-ticketApp-tvOSTests/Pods-ticketApp-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		D59D06BC4B26A7B4452A100C /* libPods-IterGNVTickets.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IterGNVTickets.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6FBC37B9C793C38F3C353DF /* Pods-IterGNVTickets-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IterGNVTickets-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-IterGNVTickets-tvOSTests/Pods-IterGNVTickets-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		D9441A3352C4464881E0ED62 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/native-base/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		E17E0CA6948B40B4824B0101 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/native-base/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		E672E2ACC3B648F0B466C112 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/native-base/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F243D9524FC44A6E820B7EA4 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/native-base/Fonts/Feather.ttf"; sourceTree = "<group>"; };
-		F6FAE9A59DFC64E7FCD3F69F /* libPods-ticketApp-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ticketApp-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6FAE9A59DFC64E7FCD3F69F /* libPods-IterGNVTickets-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IterGNVTickets-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B822446C13861DAF447B839 /* libPods-ticketAppTests.a in Frameworks */,
+				0B822446C13861DAF447B839 /* libPods-IterGNVTicketsTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,7 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54936AC235E77A8213EB8E89 /* libPods-ticketApp.a in Frameworks */,
+				54936AC235E77A8213EB8E89 /* libPods-IterGNVTickets.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,7 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5310D75FE6750E71604AE909 /* libPods-ticketApp-tvOS.a in Frameworks */,
+				5310D75FE6750E71604AE909 /* libPods-IterGNVTickets-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,20 +136,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C5EAE91FACDE54EE238F926 /* libPods-ticketApp-tvOSTests.a in Frameworks */,
+				0C5EAE91FACDE54EE238F926 /* libPods-IterGNVTickets-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* ticketAppTests */ = {
+		00E356EF1AD99517003FC87E /* IterGNVTicketsTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* ticketAppTests.m */,
+				00E356F21AD99517003FC87E /* IterGNVTicketsTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = ticketAppTests;
+			path = IterGNVTicketsTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -160,7 +160,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* ticketApp */ = {
+		13B07FAE1A68108700A75B9A /* IterGNVTickets */ = {
 			isa = PBXGroup;
 			children = (
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
@@ -171,20 +171,20 @@
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = ticketApp;
+			name = IterGNVTickets;
 			sourceTree = "<group>";
 		};
 		29E2AC5A3605EE816B14DA98 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B4597D6A709DCEB80CAF3B74 /* Pods-ticketApp.debug.xcconfig */,
-				BEFBB01C2DC4ABE1F1444A4B /* Pods-ticketApp.release.xcconfig */,
-				2F57C9618556C3D39599F9E4 /* Pods-ticketApp-tvOS.debug.xcconfig */,
-				52DD2A049DECA0279C01F1E7 /* Pods-ticketApp-tvOS.release.xcconfig */,
-				7095209E9FCC40386E72A1F7 /* Pods-ticketApp-tvOSTests.debug.xcconfig */,
-				D6FBC37B9C793C38F3C353DF /* Pods-ticketApp-tvOSTests.release.xcconfig */,
-				A1D8E1DC9D353FF3A1755DAF /* Pods-ticketAppTests.debug.xcconfig */,
-				4BE1C508F29F34E90636BFE5 /* Pods-ticketAppTests.release.xcconfig */,
+				B4597D6A709DCEB80CAF3B74 /* Pods-IterGNVTickets.debug.xcconfig */,
+				BEFBB01C2DC4ABE1F1444A4B /* Pods-IterGNVTickets.release.xcconfig */,
+				2F57C9618556C3D39599F9E4 /* Pods-IterGNVTickets-tvOS.debug.xcconfig */,
+				52DD2A049DECA0279C01F1E7 /* Pods-IterGNVTickets-tvOS.release.xcconfig */,
+				7095209E9FCC40386E72A1F7 /* Pods-IterGNVTickets-tvOSTests.debug.xcconfig */,
+				D6FBC37B9C793C38F3C353DF /* Pods-IterGNVTickets-tvOSTests.release.xcconfig */,
+				A1D8E1DC9D353FF3A1755DAF /* Pods-IterGNVTicketsTests.debug.xcconfig */,
+				4BE1C508F29F34E90636BFE5 /* Pods-IterGNVTicketsTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -194,10 +194,10 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				D59D06BC4B26A7B4452A100C /* libPods-ticketApp.a */,
-				A560711AA8A73BAAD17166E2 /* libPods-ticketApp-tvOS.a */,
-				F6FAE9A59DFC64E7FCD3F69F /* libPods-ticketApp-tvOSTests.a */,
-				B88C91F8E09E3BC005B1D6A8 /* libPods-ticketAppTests.a */,
+				D59D06BC4B26A7B4452A100C /* libPods-IterGNVTickets.a */,
+				A560711AA8A73BAAD17166E2 /* libPods-IterGNVTickets-tvOS.a */,
+				F6FAE9A59DFC64E7FCD3F69F /* libPods-IterGNVTickets-tvOSTests.a */,
+				B88C91F8E09E3BC005B1D6A8 /* libPods-IterGNVTicketsTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -238,9 +238,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* ticketApp */,
+				13B07FAE1A68108700A75B9A /* IterGNVTickets */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* ticketAppTests */,
+				00E356EF1AD99517003FC87E /* IterGNVTicketsTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				29E2AC5A3605EE816B14DA98 /* Pods */,
@@ -254,10 +254,10 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* ticketApp.app */,
-				00E356EE1AD99517003FC87E /* ticketAppTests.xctest */,
-				2D02E47B1E0B4A5D006451C7 /* ticketApp-tvOS.app */,
-				2D02E4901E0B4A5D006451C7 /* ticketApp-tvOSTests.xctest */,
+				13B07F961A680F5B00A75B9A /* IterGNVTickets.app */,
+				00E356EE1AD99517003FC87E /* IterGNVTicketsTests.xctest */,
+				2D02E47B1E0B4A5D006451C7 /* IterGNVTickets-tvOS.app */,
+				2D02E4901E0B4A5D006451C7 /* IterGNVTickets-tvOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -265,9 +265,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* ticketAppTests */ = {
+		00E356ED1AD99517003FC87E /* IterGNVTicketsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "ticketAppTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "IterGNVTicketsTests" */;
 			buildPhases = (
 				4F074304503D67EDFB07F53E /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -279,14 +279,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = ticketAppTests;
-			productName = ticketAppTests;
-			productReference = 00E356EE1AD99517003FC87E /* ticketAppTests.xctest */;
+			name = IterGNVTicketsTests;
+			productName = IterGNVTicketsTests;
+			productReference = 00E356EE1AD99517003FC87E /* IterGNVTicketsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* ticketApp */ = {
+		13B07F861A680F5B00A75B9A /* IterGNVTickets */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "ticketApp" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "IterGNVTickets" */;
 			buildPhases = (
 				AF3CFAA4D397D679F5271C34 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -299,14 +299,14 @@
 			);
 			dependencies = (
 			);
-			name = ticketApp;
-			productName = ticketApp;
-			productReference = 13B07F961A680F5B00A75B9A /* ticketApp.app */;
+			name = IterGNVTickets;
+			productName = IterGNVTickets;
+			productReference = 13B07F961A680F5B00A75B9A /* IterGNVTickets.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E47A1E0B4A5D006451C7 /* ticketApp-tvOS */ = {
+		2D02E47A1E0B4A5D006451C7 /* IterGNVTickets-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "ticketApp-tvOS" */;
+			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "IterGNVTickets-tvOS" */;
 			buildPhases = (
 				99A20F1A9EF3F033C2563FE5 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
@@ -319,14 +319,14 @@
 			);
 			dependencies = (
 			);
-			name = "ticketApp-tvOS";
-			productName = "ticketApp-tvOS";
-			productReference = 2D02E47B1E0B4A5D006451C7 /* ticketApp-tvOS.app */;
+			name = "IterGNVTickets-tvOS";
+			productName = "IterGNVTickets-tvOS";
+			productReference = 2D02E47B1E0B4A5D006451C7 /* IterGNVTickets-tvOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E48F1E0B4A5D006451C7 /* ticketApp-tvOSTests */ = {
+		2D02E48F1E0B4A5D006451C7 /* IterGNVTickets-tvOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "ticketApp-tvOSTests" */;
+			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "IterGNVTickets-tvOSTests" */;
 			buildPhases = (
 				D1D5A25C3F78C73E6F66DC3F /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
@@ -338,9 +338,9 @@
 			dependencies = (
 				2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */,
 			);
-			name = "ticketApp-tvOSTests";
-			productName = "ticketApp-tvOSTests";
-			productReference = 2D02E4901E0B4A5D006451C7 /* ticketApp-tvOSTests.xctest */;
+			name = "IterGNVTickets-tvOSTests";
+			productName = "IterGNVTickets-tvOSTests";
+			productReference = 2D02E4901E0B4A5D006451C7 /* IterGNVTickets-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -371,7 +371,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "ticketApp" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "IterGNVTickets" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -385,10 +385,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* ticketApp */,
-				00E356ED1AD99517003FC87E /* ticketAppTests */,
-				2D02E47A1E0B4A5D006451C7 /* ticketApp-tvOS */,
-				2D02E48F1E0B4A5D006451C7 /* ticketApp-tvOSTests */,
+				13B07F861A680F5B00A75B9A /* IterGNVTickets */,
+				00E356ED1AD99517003FC87E /* IterGNVTicketsTests */,
+				2D02E47A1E0B4A5D006451C7 /* IterGNVTickets-tvOS */,
+				2D02E48F1E0B4A5D006451C7 /* IterGNVTickets-tvOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -490,7 +490,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ticketAppTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-IterGNVTicketsTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -512,7 +512,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ticketApp-tvOS-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-IterGNVTickets-tvOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -534,7 +534,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ticketApp-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-IterGNVTickets-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -556,7 +556,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ticketApp-tvOSTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-IterGNVTickets-tvOSTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -608,7 +608,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* ticketAppTests.m in Sources */,
+				00E356F31AD99517003FC87E /* IterGNVTicketsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -634,7 +634,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DCD954D1E0B4F2C00145EB5 /* ticketAppTests.m in Sources */,
+				2DCD954D1E0B4F2C00145EB5 /* IterGNVTicketsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -643,12 +643,12 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* ticketApp */;
+			target = 13B07F861A680F5B00A75B9A /* IterGNVTickets */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 		2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2D02E47A1E0B4A5D006451C7 /* ticketApp-tvOS */;
+			target = 2D02E47A1E0B4A5D006451C7 /* IterGNVTickets-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -660,7 +660,7 @@
 				13B07FB21A68108700A75B9A /* Base */,
 			);
 			name = LaunchScreen.xib;
-			path = ticketApp;
+			path = IterGNVTickets;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -668,14 +668,14 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A1D8E1DC9D353FF3A1755DAF /* Pods-ticketAppTests.debug.xcconfig */;
+			baseConfigurationReference = A1D8E1DC9D353FF3A1755DAF /* Pods-IterGNVTicketsTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = ticketAppTests/Info.plist;
+				INFOPLIST_FILE = IterGNVTicketsTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -685,17 +685,17 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ticketApp.app/ticketApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IterGNVTickets.app/IterGNVTickets";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4BE1C508F29F34E90636BFE5 /* Pods-ticketAppTests.release.xcconfig */;
+			baseConfigurationReference = 4BE1C508F29F34E90636BFE5 /* Pods-IterGNVTicketsTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = ticketAppTests/Info.plist;
+				INFOPLIST_FILE = IterGNVTicketsTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -705,13 +705,13 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ticketApp.app/ticketApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IterGNVTickets.app/IterGNVTickets";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B4597D6A709DCEB80CAF3B74 /* Pods-ticketApp.debug.xcconfig */;
+			baseConfigurationReference = B4597D6A709DCEB80CAF3B74 /* Pods-IterGNVTickets.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -719,7 +719,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = SUQ23U5YFZ;
-				INFOPLIST_FILE = ticketApp/Info.plist;
+				INFOPLIST_FILE = IterGNVTickets/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -728,7 +728,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = ticketApp;
+				PRODUCT_NAME = IterGNVTickets;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -736,14 +736,14 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BEFBB01C2DC4ABE1F1444A4B /* Pods-ticketApp.release.xcconfig */;
+			baseConfigurationReference = BEFBB01C2DC4ABE1F1444A4B /* Pods-IterGNVTickets.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SUQ23U5YFZ;
-				INFOPLIST_FILE = ticketApp/Info.plist;
+				INFOPLIST_FILE = IterGNVTickets/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -752,7 +752,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = ticketApp;
+				PRODUCT_NAME = IterGNVTickets;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -760,7 +760,7 @@
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2F57C9618556C3D39599F9E4 /* Pods-ticketApp-tvOS.debug.xcconfig */;
+			baseConfigurationReference = 2F57C9618556C3D39599F9E4 /* Pods-IterGNVTickets-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -771,14 +771,14 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "ticketApp-tvOS/Info.plist";
+				INFOPLIST_FILE = "IterGNVTickets-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.ticketApp-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.IterGNVTickets-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -788,7 +788,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 52DD2A049DECA0279C01F1E7 /* Pods-ticketApp-tvOS.release.xcconfig */;
+			baseConfigurationReference = 52DD2A049DECA0279C01F1E7 /* Pods-IterGNVTickets-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -799,14 +799,14 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "ticketApp-tvOS/Info.plist";
+				INFOPLIST_FILE = "IterGNVTickets-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.ticketApp-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.IterGNVTickets-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -816,7 +816,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7095209E9FCC40386E72A1F7 /* Pods-ticketApp-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = 7095209E9FCC40386E72A1F7 /* Pods-IterGNVTickets-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -826,24 +826,24 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "ticketApp-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "IterGNVTickets-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.ticketApp-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.IterGNVTickets-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ticketApp-tvOS.app/ticketApp-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IterGNVTickets-tvOS.app/IterGNVTickets-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Debug;
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D6FBC37B9C793C38F3C353DF /* Pods-ticketApp-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = D6FBC37B9C793C38F3C353DF /* Pods-IterGNVTickets-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -853,17 +853,17 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "ticketApp-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "IterGNVTickets-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.ticketApp-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.IterGNVTickets-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ticketApp-tvOS.app/ticketApp-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IterGNVTickets-tvOS.app/IterGNVTickets-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Release;
@@ -970,7 +970,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "ticketAppTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "IterGNVTicketsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -979,7 +979,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "ticketApp" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "IterGNVTickets" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -988,7 +988,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "ticketApp-tvOS" */ = {
+		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "IterGNVTickets-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4971E0B4A5E006451C7 /* Debug */,
@@ -997,7 +997,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "ticketApp-tvOSTests" */ = {
+		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "IterGNVTickets-tvOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4991E0B4A5E006451C7 /* Debug */,
@@ -1006,7 +1006,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "ticketApp" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "IterGNVTickets" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

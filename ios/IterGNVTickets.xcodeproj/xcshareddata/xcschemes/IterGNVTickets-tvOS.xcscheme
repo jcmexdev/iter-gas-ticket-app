@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-               BuildableName = "ticketApp-tvOS.app"
-               BlueprintName = "ticketApp-tvOS"
-               ReferencedContainer = "container:ticketApp.xcodeproj">
+               BuildableName = "IterGNVTickets-tvOS.app"
+               BlueprintName = "IterGNVTickets-tvOS"
+               ReferencedContainer = "container:IterGNVTickets.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "ticketApp-tvOSTests.xctest"
-               BlueprintName = "ticketApp-tvOSTests"
-               ReferencedContainer = "container:ticketApp.xcodeproj">
+               BuildableName = "IterGNVTickets-tvOSTests.xctest"
+               BlueprintName = "IterGNVTickets-tvOSTests"
+               ReferencedContainer = "container:IterGNVTickets.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -61,9 +61,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "ticketApp-tvOSTests.xctest"
-               BlueprintName = "ticketApp-tvOSTests"
-               ReferencedContainer = "container:ticketApp.xcodeproj">
+               BuildableName = "IterGNVTickets-tvOSTests.xctest"
+               BlueprintName = "IterGNVTickets-tvOSTests"
+               ReferencedContainer = "container:IterGNVTickets.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -71,9 +71,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "ticketApp-tvOS.app"
-            BlueprintName = "ticketApp-tvOS"
-            ReferencedContainer = "container:ticketApp.xcodeproj">
+            BuildableName = "IterGNVTickets-tvOS.app"
+            BlueprintName = "IterGNVTickets-tvOS"
+            ReferencedContainer = "container:IterGNVTickets.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "ticketApp-tvOS.app"
-            BlueprintName = "ticketApp-tvOS"
-            ReferencedContainer = "container:ticketApp.xcodeproj">
+            BuildableName = "IterGNVTickets-tvOS.app"
+            BlueprintName = "IterGNVTickets-tvOS"
+            ReferencedContainer = "container:IterGNVTickets.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -113,9 +113,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "ticketApp-tvOS.app"
-            BlueprintName = "ticketApp-tvOS"
-            ReferencedContainer = "container:ticketApp.xcodeproj">
+            BuildableName = "IterGNVTickets-tvOS.app"
+            BlueprintName = "IterGNVTickets-tvOS"
+            ReferencedContainer = "container:IterGNVTickets.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

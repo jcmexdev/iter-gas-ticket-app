@@ -11,12 +11,13 @@
     "lint": "eslint src/ --fix"
   },
   "dependencies": {
+    "@react-native-community/async-storage": "1.8.0",
     "@react-native-community/datetimepicker": "2.2.2",
     "moment": "2.24.0",
     "native-base": "2.13.8",
-    "@react-native-community/async-storage": "1.8.0",
     "react": "16.9.0",
     "react-native": "0.61.5",
+    "react-native-dropdown-autocomplete": "1.0.18",
     "react-native-gesture-handler": "1.6.0",
     "react-native-print": "0.6.0",
     "react-native-reanimated": "1.7.0",

@@ -14,9 +14,26 @@ export const LOGIN = async (user, password) => {
     response = await response.json();
     return response;
   } catch (error) {
-    console.log(error);
     return false;
   }
 };
 
-export const LOAD_DRIVERS = async () => {};
+export const LOAD_DRIVERS = async () => {
+  try {
+    let response = await fetch(URLS.LOAD_DRIVERS_URL);
+    response = await response.json();
+    return response;
+  } catch (error) {
+    return false;
+  }
+};
+
+export const LOAD_PLATES = async () => {
+  try {
+    let response = await fetch(URLS.LOAD_PLATES_URL);
+    response = await response.json();
+    return response;
+  } catch (error) {
+    return false;
+  }
+};

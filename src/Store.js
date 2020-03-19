@@ -3,9 +3,13 @@ import { persistStore, persistReducer } from 'redux-persist';
 import AsyncStorage from '@react-native-community/async-storage';
 import Thunk from 'redux-thunk';
 import user from './reducers/user';
+import drivers from './reducers/drivers';
+import plates from './reducers/plates';
 
 const reducer = combineReducers({
   user,
+  drivers,
+  plates,
 });
 
 const persistConfig = {

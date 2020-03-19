@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 import { Actions, ActionConst } from 'react-native-router-flux';
 import { connect } from 'react-redux';
+import { LOGIN } from '../../utils/api';
 import { SET_USER } from '../../actions';
 import iterGasLogo from '../../images/iter-gas-natural.png';
 import styles from './styles';
@@ -45,43 +46,31 @@ class SignIn extends Component {
     });
   };
 
-  submit = () => {
+  submit = async () => {
     this.setState({ isLoading: true });
-    /* eslint no-undef: 'off' */
-    const data = new FormData();
-    data.append('user', this.state.user);
-    data.append('password', this.state.password);
-
-    fetch('http://189.194.249.170:83/atsem/url/ticket/login.php', {
-      method: 'POST',
-      body: data,
-    })
-      .then((response) => response.json())
-      .then((response) => {
-        this.setState({ isLoading: false });
-        this.handleResponse(response);
-      })
-      .catch((error) => {
-        this.setState({ isLoading: false });
-        Alert.alert(`Algo salio mal: ${error}`);
-      });
+    const response = await LOGIN(this.state.user, this.state.password);
+    this.setState({ isLoading: false });
+    if (response === false) {
+      Alert.alert(
+        'Oops!',
+        'Lo sentimos algo salio mal al tratar de iniciar sesión'
+      );
+    }
+    this.handleResponse(response);
   };
 
   handleResponse = ({ status, message, user }) => {
-    // el usuario o contraseña no fueron enviados
     if (status === 400) {
       this.setState({
         message,
       });
     }
     if (status === 200) {
-      // El usuario no conincide
       if (user === null) {
         this.setState({
           message,
         });
       } else {
-        // El usuario fue encontrado
         this.props.dispatch(SET_USER(user.fullName));
         Actions.home({ type: ActionConst.RESET });
       }

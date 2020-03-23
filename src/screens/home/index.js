@@ -30,6 +30,7 @@ class Home extends Component {
     this.initialstate = {
       numUni: null,
       placa: null,
+      client: 'BIMBO',
       conductor: null,
       km: null,
       liters: null,
@@ -146,7 +147,8 @@ class Home extends Component {
         </div>
       </div>
       <div class="client bordered">
-        <div>Cliente: ${conductor}</div>
+        <div>Cliente: ${this.state.data.client}</div>
+        <div>Conductor: ${conductor}</div>
         <div>Placa: ${placa}</div>
         <div>No. Unidad: ${numUni}</div>
         <div>Kilómetros: ${km}</div>
@@ -202,7 +204,7 @@ class Home extends Component {
 
   insertData = async () => {
     this.handleLiters();
-    this.handleLiters();
+    this.handleKilometers();
     if (!this.validateBeforeInsert()) {
       return 0;
     }
@@ -378,6 +380,19 @@ class Home extends Component {
             valueExtractor={(item) => item.plate}
             noDataText="No se encontró la placa"
           />
+
+          <Label style={styles.label}>CLIENTE</Label>
+          <Item rounded>
+            <Picker
+              mode="dropdown"
+              iosHeader="Selecciona un cliente"
+              iosIcon={<Icon name="arrow-down" />}
+              selectedValue={this.state.client}
+              onValueChange={(itemValue) => this.setState({ client: itemValue })}
+            >
+              <Picker.Item label="BIMBO" value="BIMBO" />
+            </Picker>
+          </Item>
 
           <Label style={styles.label}>NOMBRE DEL CONDUCTOR</Label>
           <Autocomplete

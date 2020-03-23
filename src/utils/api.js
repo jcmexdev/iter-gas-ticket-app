@@ -42,6 +42,7 @@ export const STORE_TICKET = async (state, date, time, authUserName) => {
   const form = new FormData();
   form.append('car_number', state.numUni);
   form.append('licence_plate', state.placa);
+  form.append('client', state.client);
   form.append('driverName', state.conductor);
   form.append('km', state.km);
   form.append('liters', state.liters);

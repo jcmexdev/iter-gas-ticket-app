@@ -4,6 +4,7 @@ import {
 } from 'react-native';
 import RNPrint from 'react-native-print';
 import moment from 'moment';
+import { Autocomplete } from 'react-native-dropdown-autocomplete';
 import {
   Icon,
   Picker,
@@ -20,6 +21,7 @@ import {
 import { Actions, ActionConst } from 'react-native-router-flux';
 import { connect } from 'react-redux';
 import { REMOVE_USER } from '../../actions';
+import { STORE_TICKET } from '../../utils/api';
 import styles from './styles';
 
 class Home extends Component {
@@ -50,6 +52,8 @@ class Home extends Component {
 
   clearInput = () => {
     this.setState(this.initialstate);
+    this.autocompletePlate.clearInput();
+    this.autocompleteDriver.clearInput();
   };
 
   selectPrinter = async () => {
@@ -146,6 +150,7 @@ class Home extends Component {
         <div>Placa: ${placa}</div>
         <div>No. Unidad: ${numUni}</div>
         <div>Kilómetros: ${km}</div>
+        <div>Rendimiento: ${this.state.data.performance}</div>
       </div>
       <div class="products bordered">
         <div class="products_item">
@@ -195,7 +200,7 @@ class Home extends Component {
     return true;
   };
 
-  insertData = () => {
+  insertData = async () => {
     this.handleLiters();
     this.handleLiters();
     if (!this.validateBeforeInsert()) {
@@ -222,33 +227,21 @@ class Home extends Component {
     } else if (this.state.hose === 11 || this.state.hose === 12) {
       this.state.pump = '6';
     }
-    /* eslint no-undef: 'off' */
-    const form = new FormData();
-    form.append('car_number', this.state.numUni);
-    form.append('licence_plate', this.state.placa);
-    form.append('driverName', this.state.conductor);
-    form.append('km', this.state.km);
-    form.append('liters', this.state.liters);
-    form.append('date', fech);
-    form.append('time', hra);
-    form.append('dispatcher', this.props.user.fullName);
-    form.append('station', this.state.nombstation);
-    form.append('work_shift', this.state.workShift);
-    form.append('pump', this.state.pump);
-    form.append('hose', this.state.hose);
-    fetch('http://189.194.249.170:83/atsem/url/ticket/guardaTicket.php', {
-      method: 'POST',
-      body: form,
-    })
-      .then((response) => response.json())
-      .then((response) => {
-        this.setState({ data: response, isLoading: false });
-        this.printTicket();
-      })
-      .catch((errors) => {
-        this.setState({ isLoading: false });
-        Alert.alert(`Algo salio mal al guardar el registro: ${errors}`);
-      });
+
+    const response = await STORE_TICKET(
+      this.state,
+      fech,
+      hra,
+      this.props.user.fullName
+    );
+
+    if (response.status === 200) {
+      this.setState({ data: response, isLoading: false });
+      this.printTicket();
+    } else {
+      this.setState({ isLoading: false });
+    }
+
     return true;
   };
 
@@ -257,7 +250,7 @@ class Home extends Component {
       {this.state.selectedPrinter && (
         <View style={styles.container}>
           <Text>{`Impresora seleccionada: ${this.state.selectedPrinter.name}`}</Text>
-          <Text>{`Direccion: ${this.state.selectedPrinter.url}`}</Text>
+          <Text>{`Dirección: ${this.state.selectedPrinter.url}`}</Text>
         </View>
       )}
       <Button style={styles.button}>
@@ -369,37 +362,40 @@ class Home extends Component {
             />
           </Item>
           <Label style={styles.label}>NÚMERO DE PLACA</Label>
-          <Item style={styles.item} rounded>
-            <Input
-              rounded
-              placeholder="Placa"
-              autoCapitalize="characters"
-              returnKeyType="next"
-              ref={(input) => {
-                this.inputPlate = input;
-              }}
-              /* eslint no-underscore-dangle: ["error", { "allow": ["_root"] }] */
-              onSubmitEditing={() => this.inputDriverName._root.focus()}
-              onChangeText={(text) => this.updateState('placa', text)}
-              value={this.state.placa}
-            />
-          </Item>
+          <Autocomplete
+            ref={(el) => {
+              this.autocompletePlate = el;
+            }}
+            placeholder="Placa"
+            inputContainerStyle={styles.autocomplete}
+            inputStyle={{
+              paddingLeft: 10,
+              borderWidth: 0,
+              width: '80%',
+            }}
+            data={this.props.plates}
+            handleSelectItem={(item) => this.setState({ placa: item.plate })}
+            valueExtractor={(item) => item.plate}
+            noDataText="No se encontró la placa"
+          />
 
           <Label style={styles.label}>NOMBRE DEL CONDUCTOR</Label>
-          <Item style={styles.item} rounded>
-            <Input
-              placeholder="Nombre Conductor"
-              autoCapitalize="characters"
-              returnKeyType="next"
-              ref={(input) => {
-                this.inputDriverName = input;
-              }}
-              /* eslint no-underscore-dangle: ["error", { "allow": ["_root"] }] */
-              onSubmitEditing={() => this.inputKilometers._root.focus()}
-              onChangeText={(text) => this.updateState('conductor', text)}
-              value={this.state.conductor}
-            />
-          </Item>
+          <Autocomplete
+            ref={(el) => {
+              this.autocompleteDriver = el;
+            }}
+            placeholder="Nombre del conductor"
+            inputContainerStyle={styles.autocomplete}
+            inputStyle={{
+              paddingLeft: 10,
+              borderWidth: 0,
+              width: '80%',
+            }}
+            data={this.props.drivers}
+            handleSelectItem={(item) => this.setState({ conductor: item.full_name })}
+            valueExtractor={(item) => item.full_name}
+            noDataText="No se encontró la placa"
+          />
 
           <Label
             style={[styles.label, this.state.errors_kilometers && styles.error]}
@@ -525,6 +521,8 @@ class Home extends Component {
   }
 }
 const mapStateToProps = (state) => ({
+  drivers: state.drivers,
+  plates: state.plates,
   user: state.user,
 });
 export default connect(mapStateToProps)(Home);

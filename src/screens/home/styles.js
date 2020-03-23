@@ -45,4 +45,10 @@ export default {
     fontWeight: 'bold',
     color: 'red',
   },
+  autocomplete: {
+    borderWidth: 1,
+    borderColor: '#dedede',
+    height: 50,
+    borderRadius: 30,
+  },
 };
